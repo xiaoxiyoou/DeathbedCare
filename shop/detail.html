@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/load.css" />
+    <link rel="stylesheet" href="./css/detail.css" />
+    <link rel="stylesheet" href="./js/need/layer.css">
+    <script src="js/url.js "></script>
+    <script src="js/vue.js"></script>
+    <script src="js/rem.js"></script>
+    <title>临终关怀</title>
+</head>
+
+
+<body>
+    <div id="app" v-if="calendardetail" v-cloak>
+        <div class="con-wrapper" v-cloak>
+            <div class="title-wrapper c-row">
+                <div class="data-title c-row a-c j-c">姓名</div>
+                <div class="check-title  c-row a-c j-c">电话号码
+
+                </div>
+                <div class="num-title  c-row a-c j-c">获取补贴金
+                </div>
+                <div class="handle-title  c-row a-c j-c">操作</div>
+            </div>
+            <div class="num-wrapper c-row" v-for="(item,index) in results">
+                <div class="data c-row a-c j-c" v-cloak v-if="item.PersonSex == 1">{{item.TrueName}}先生</div>
+                <div class="data c-row a-c j-c" v-cloak v-else>{{item.TrueName}}女士</div>
+                <div class="check c-row a-c j-c" v-cloak>{{item.Telephone}}</div>
+                <div class="num c-row a-c j-c" v-if="item.Allowance > 0" v-cloak>{{item.Allowance}}</div>
+                <div class="num c-row a-c j-c" v-else>未获得</div>
+                <div class="handle c-row a-c j-c">
+                    <div v-on:click="cancel(item.Allowance,index)" v-if="receive[index] == 0" v-bind:class="receive[index]?'handle-text-hover':'handle-text'" class="c-row a-c j-c">
+                        核销
+                    </div>
+                    <div v-on:click="cancel(item.Allowance,index)" v-else v-bind:class="receive[index]?'handle-text-hover':'handle-text'" class="c-row a-c j-c">
+                        已核销
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <img class="no-text" v-cloak v-if="notext" src="./img/no-text.png" alt="" />
+        <div class="btm-con c-col a-c j-b" v-cloak>
+            <div class=" switch-wrapper c-row a-c j-b ">
+                <div class="switch-item c-row a-c j-c " v-on:click="prvePage" v-bind:class="{ 'switch-color': switchColor}">
+                    <img class="switch-img-left" src="./img/left.png " alt=" "> 上一页
+                </div>
+                <div class="switch-item c-row a-c j-c " v-on:click="nextPage" v-bind:class="{ 'switch-color': switchColorNext}">
+                    下一页
+                    <img class="switch-img " src="./img/riht.png " alt=" ">
+                </div>
+
+            </div>
+            <a href="./sharePoster.html" v-cloak>
+                <div class="btm-share c-row a-c j-c ">去分享临终关怀讲座</div>
+            </a>
+        </div>
+
+    </div>
+</body>
+<script src="js/noScaling.js"></script>
+<script src="./js/layer.js"></script>
+<script src="js/axios.min.js "></script>
+<script src="js/detail.js "></script>
+<script src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+
+<script>
+</script>
+
+</html>

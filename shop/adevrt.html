@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/adevrt.css" />
+    <link rel="stylesheet" href="./js/need/layer.css">
+    <script src="js/rem.js"></script>
+    <title>临终关怀</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div id="app" class="c-col j-c a-c" v-if="show">
+        <div class="con" v-cloak>
+            <div class="titleCon c-row">
+                <div class="titleName ">广告名称</div>
+                <div class="titleImg">广告缩略图</div>
+                <div class="titleNum">点击数pv</div>
+                <div class="titlebtn">操作</div>
+            </div>
+            <div class="itemCon">
+                <div class="item c-row" v-for="item in results">
+                    <div class="itemNameCon c-row a-c j-c">
+                        <div class="itemName" v-cloak>
+                            {{item.AdName}}
+                        </div>
+                    </div>
+                    <div class="itemImgCon  c-row j-c a-c">
+                        <img v-cloak class="itemImg" :src="item.AdImg" alt=" " />
+
+                    </div>
+                    <div class="itemNum  c-row j-c a-c" v-cloak>{{item.pv}}</div>
+                    <a class="itembtnCon  c-row j-c a-c" :href="'./adevrtDatail.html?AdId='+ item.AdId">
+                        <div class="itembtn  c-row j-c a-c">编辑</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="load-tip">上线广告请点击拨打客服电话<a href="tel:13125418768">13125418768</a></div>
+        <a  v-on:click="clickssession" class="btnlink">
+            <div class="btm c-row j-c a-c">
+                添加广告
+            </div>
+        </a>
+        <!-- 无广告-->
+        <img class="no-text" v-cloak v-if="notext" src="./img/no-text.png" alt="" />
+    </div>
+</body>
+<script src="js/noScaling.js"></script>
+<script src="js/vue.js "></script>
+<script src="js/url.js "></script>
+<script src="js/axios.min.js "></script>
+<script src="js/adevrt.js "></script>
+<script src="js/jquery-1.8.2.js"></script>
+<script src="./js/layer.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+
+
+<script>
+</script>
+
+</html>

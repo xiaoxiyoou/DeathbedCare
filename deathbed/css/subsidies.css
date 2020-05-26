@@ -1,0 +1,386 @@
+.subsidiespop {
+    display: none;
+}
+
+.subsidiesBg {
+    height: auto;
+    width: 6.05rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: #ffffff;
+    text-align: center;
+    border-radius: .2rem;
+}
+
+.subsidiesImgCon {
+    position: relative;
+    margin-top: .36rem;
+}
+
+.subsidiesImg {
+    width: 5.46rem;
+    height: 1.75rem;
+    position: relative;
+    z-index: 1000;
+}
+
+.subsidiesNumCon {
+    height: 1.75rem;
+    top: 0;
+    width: 5.46rem;
+    z-index: 1001;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.subsidiesNumLeft {
+    width: 2.18rem;
+    color: #b7866a;
+    text-align: right;
+}
+
+.numtop {
+    padding-left: .5rem;
+}
+
+.num {
+    font-size: .47rem;
+}
+
+.subsidiesNumRight {
+    width: 3.26rem;
+    padding-right: .3rem;
+    text-align: center;
+}
+
+.cash {
+    color: #b7866a;
+    font-size: .32rem;
+}
+
+.cashNOum {
+    height: .45rem;
+    width: 2.14rem;
+    color: #ffffff;
+    background: #b7866a;
+    border-radius: .22rem;
+    font-size: .24rem;
+    line-height: .45rem;
+    text-align: center;
+    margin-top: .15rem;
+}
+
+.sex-select-con {
+    width: .38rem;
+    height: .38rem;
+    border-radius: 50%;
+    border: .03rem solid #b7866a;
+    margin-left: .17rem;
+}
+
+.sex-select {
+    width: .23rem;
+    height: .23rem;
+    border-radius: 50%;
+    background: #b7866a;
+}
+
+.video-sex-select-con {
+    width: .38rem;
+    height: .38rem;
+    border-radius: 50%;
+    border: .03rem solid #b7866a;
+    margin-left: .17rem;
+}
+
+.video-sex-select {
+    width: .19rem;
+    height: .19rem;
+    border-radius: 50%;
+    background: #b7866a;
+}
+
+.sexInput {
+    position: relative;
+    z-index: 1000;
+    padding-left: .75rem;
+    width: 2.89rem;
+    height: .83rem;
+    border-radius: .41rem;
+    color: #999999;
+    font-size: .29rem;
+    background: #fffbf8;
+    border: 1px solid #ececec;
+}
+
+.videosexInput {
+    position: relative;
+    z-index: 1000;
+    padding-left: .2rem;
+    width: 2.66rem;
+    height: .8rem;
+    border-radius: .1rem;
+    font-size: .29rem;
+    color: #888888;
+    background: #f2f2f2;
+}
+
+.sex-con,
+.phone-con,
+.code-con {
+    position: relative;
+    width: 5.46rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.video-sex-con,
+.video-phone-con,
+.video-code-con {
+    position: relative;
+    width: 5.51rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.video-sex-con {
+    margin-top: .71rem;
+}
+
+.video-phone-con {
+    margin-top: .25rem;
+}
+
+.video-code-con {
+    margin-bottom: .39rem;
+    margin-top: .25rem;
+}
+
+.sex-con {
+    margin-top: .2rem;
+}
+
+.phone-con {
+    margin-top: .17rem;
+}
+
+.code-con {
+    margin-top: .17rem;
+}
+
+.sexImg,
+.phoneImg,
+.codeImg {
+    width: .37rem;
+    height: .41rem;
+    position: absolute;
+    left: .27rem;
+    top: .24rem;
+    z-index: 1001;
+}
+
+.sex-text {
+    color: #b7866a;
+    font-size: .32rem;
+}
+
+.video-sex-text {
+    color: #555555;
+    font-size: .32rem;
+}
+
+.phoneInput {
+    padding-left: .75rem;
+    width: 5.46rem;
+    height: .83rem;
+    border-radius: .41rem;
+    color: #999999;
+    font-size: .29rem;
+    background: #fffbf8;
+    border: 1px solid #ececec;
+}
+
+.videophoneInput {
+    padding-left: .2rem;
+    width: 5.51rem;
+    height: .8rem;
+    border-radius: .1rem;
+    color: #888888;
+    background: #f2f2f2;
+    font-size: .29rem;
+}
+
+.codeInput {
+    padding-left: .75rem;
+    width: 3.27rem;
+    height: .83rem;
+    border-radius: .41rem;
+    color: #999999;
+    font-size: .29rem;
+    background: #fffbf8;
+    border: 1px solid #ececec;
+}
+
+.videocodeInput {
+    padding-left: .2rem;
+    width: 3.35rem;
+    height: .8rem;
+    border-radius: .1rem;
+    color: #888888;
+    background: #f2f2f2;
+    font-size: .29rem;
+}
+
+.code-btn {
+    width: 1.95rem;
+    border-radius: .41rem;
+    height: .83rem;
+    background: linear-gradient(#b7866a, #dcb39b);
+    color: #ffffff;
+    text-align: center;
+    line-height: .83rem;
+    font-size: .28rem;
+    border: 1px solid #a07157;
+}
+
+.video-code-btn {
+    width: 1.95rem;
+    border-radius: .41rem;
+    height: .83rem;
+    background: linear-gradient(#b7866a, #dcb39b);
+    color: #ffffff;
+    text-align: center;
+    line-height: .83rem;
+    font-size: .28rem;
+    border: 1px solid #a07157;
+}
+
+.video-use-btm {
+    border-radius: .53rem;
+    width: 5.46rem;
+    height: .92rem;
+    background: linear-gradient(#c38e71, #e7baa0);
+    text-align: center;
+    line-height: .92rem;
+    font-size: .38rem;
+    color: #ffffff;
+    margin-top: .26rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: relative;
+    margin-bottom: .5rem;
+}
+
+.use-get,
+.use-btm {
+    border-radius: .53rem;
+    width: 5.46rem;
+    height: .92rem;
+    background: linear-gradient(#c38e71, #e7baa0);
+    text-align: center;
+    line-height: .92rem;
+    font-size: .38rem;
+    color: #ffffff;
+    margin-top: .26rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: relative;
+}
+
+#use-btm-href {
+    color: #ffffff;
+    width: 5.46rem;
+    height: .92rem;
+}
+
+.subsidies-mid {
+    margin-top: .24rem;
+    color: #ffffff;
+    font-size: .22rem;
+}
+
+.subsidies-title {
+    margin-top: .65rem;
+    color: #b7866a;
+    font-size: .39rem;
+}
+
+.videoTitle {
+    margin-top: .5rem;
+    color: #b7866a;
+    font-size: .39rem;
+    margin-bottom: .6rem;
+}
+
+.subsidies-line {
+    border-bottom: 1px solid #ffffff;
+    width: .6rem;
+}
+
+.mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    bottom: 0;
+}
+
+.subsidies-line-word {
+    margin: 0 .1rem;
+}
+
+.subsidies-close {
+    position: absolute;
+    top: .23rem;
+    right: .23rem;
+    width: .4rem;
+    height: .4rem;
+}
+
+.subsidiesClose {
+    position: absolute;
+    top: .23rem;
+    right: .23rem;
+    width: .4rem;
+    height: .4rem;
+}
+
+.sex-select-no {
+    display: none;
+}
+
+.videoBg {
+    height: auto;
+    width: 6.28rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: #ffffff;
+    text-align: center;
+    border-radius: .2rem;
+}
+
+.shopPhone {
+    border-radius: .53rem;
+    width: 5.46rem;
+    height: .92rem;
+    border: 1px solid #a07157;
+    text-align: center;
+    line-height: .92rem;
+    font-size: .38rem;
+    color: #b7866a;
+    margin-top: .17rem;
+    margin-bottom: .5rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: relative;
+}

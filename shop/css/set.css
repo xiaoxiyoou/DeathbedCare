@@ -1,0 +1,51 @@
+#app {
+    /* text-align: center; */
+    font-family: MicrosoftYaHei;
+}
+
+.title {
+    color: #444444;
+    font-size: .45rem;
+    margin-top: 1.02rem;
+}
+
+.input {
+    text-align: right;
+    background: #f2f2f2;
+    font-size: .30rem;
+}
+
+.num-wrapper {
+    color: #444444;
+    width: 6.9rem;
+    height: .8rem;
+    margin-top: .66rem;
+    background: #f2f2f2;
+    padding: 0 .2rem;
+    font-size: .30rem;
+}
+
+.input-text {
+    margin-left: .25rem;
+}
+
+.tip {
+    margin-top: .34rem;
+    width: 6.9rem;
+    font-size: .28rem;
+    color: #777777;
+    line-height: .48rem;
+    text-align: justify;
+}
+
+.btm-save {
+    width: 6.9rem;
+    height: .85rem;
+    font-size: .32rem;
+    border-radius: 0.08rem;
+    color: #ffffff;
+    background: linear-gradient(#854ccd, #a870ee);
+    text-align: center;
+    line-height: .85rem;
+    margin-top: 1rem;
+}

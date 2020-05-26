@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="js/rem.js"></script>
+    <script src="js/url.js"></script>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/load.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link href="./css/picker.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./js/need/layer.css">
+    <title>临终关怀</title>
+</head>
+
+<body>
+    <div id="app" v-if="calendardetail"  v-cloak>
+        <template>
+                <div class="select">
+                    <div class="select-head c-row a-c j-b"   v-on:click="demoClick(inputValue)">
+                        <span class="select-head-cont">{{condition}}</span>
+                        <div class="textCon c-row a-c j-c">                          
+                            <input type="text" readonly="readonly" id="nowValue" class="input_auto"   v-model="inputValue">
+                            <input  type="text" class="month" value="月">
+                        </div>                   
+                        <span class="spanw"></span>
+                        <img class="selct-img" src="./img/select.png">
+                    </div>                
+                </div>
+        </template>
+        <div class="c-col a-c j-b">
+            <div class="wrapper">
+                <div class="con-wrapper" v-cloak>
+                    <div class="title-wrapper c-row">
+                        <div class="data-title c-row a-c j-c">日期</div>
+                        <div class="check-title  c-row a-c j-c">被查看
+                            <div class="unit">（次）</div>
+                        </div>
+                        <div class="num-title  c-row a-c j-c">获取用户
+                            <div class="unit">(人)</div>
+                        </div>
+                        <div class="handle-title  c-row a-c j-c">操作</div>
+                    </div>
+                    <div class="num-wrapper c-row" v-for="item in results">
+                        <div class="data c-row a-c j-c" v-cloak>{{item.viewdate}}</div>
+                        <div class="check c-row a-c j-c" v-cloak>{{item.viewtotal}}</div>
+                        <div class="num c-row a-c j-c" v-cloak>{{item.regtotal}}</div>
+                        <div class="handle c-row a-c j-c">
+                            <a v-bind:href="'./detail.html?date='+ item.viewdate">
+                                <div class="handle-text c-row a-c j-c">
+                                    查看
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <img class="no-text" v-cloak v-if="notext" src="./img/no-text.png" alt="" />
+            <div class="btm-con" v-cloak>
+
+                <div class="switch-wrapper c-row a-c j-b">
+                    <div class="switch-item c-row a-c j-c" v-on:click="prvePage" v-bind:class="{ 'switch-color': switchColor}">
+                        <img class="switch-img-left" src="./img/left.png " alt=" "> 上一页
+                    </div>
+                    <div class="switch-item  c-row a-c j-c" v-on:click="nextPage" v-bind:class="{ 'switch-color': switchColorNext}">
+                        下一页
+                        <img class="switch-img" src="./img/riht.png" alt="">
+                    </div>
+
+                </div>
+
+                <div class="set  c-row a-c j-c" v-on:click="setShowing">设置</div>
+
+                <div class="btm c-row j-b">
+                    <a v-bind:href="'http://b.fuyulove.com/ShopActity/deathbed/index.html?shopId=' + Message">
+                        <div class="preview  c-row a-c j-c">预 览</div>
+                    </a>
+                    <a href="./sharePoster.html">
+                        <div class="share  c-row a-c j-c">分 享</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 设置弹出框 -->
+        <div class="set-con" v-if="setShow" v-cloak>
+            <div class="set-mask" v-on:click="setShowing"></div>
+            <div class="set-item c-col a-c " v-bind:class="[slide ? 'slideup' : 'slidedown']">
+                <div class="set-title ">请选择您要设置的内容</div>
+                <a href="./set.html">
+                    <div class="set-momey c-col j-c a-c ">
+                        设置惠民补贴金
+                    </div>
+                </a>
+                <a href="./adevrt.html">
+                    <div class="set-adevrt c-col j-c a-c ">
+                        设置广告信息
+                    </div>
+                </a>
+                <div class="set-cancel c-col j-c a-c " v-on:click="setShowing">取消</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/noScaling.js"></script>
+<script src="./js/datePicker.js "></script>
+<script src="js/axios.min.js "></script>
+<script src="js/index.js "></script>
+<script src="./js/dataPickerAdd.js "></script>
+<script src="./js/layer.js "></script>
+<script src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+<script>
+</script>
+
+</html>

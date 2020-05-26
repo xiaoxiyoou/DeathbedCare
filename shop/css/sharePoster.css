@@ -1,0 +1,129 @@
+#app {
+    text-align: center;
+    position: relative;
+    padding-top: .7rem;
+}
+
+.swiper-pagination {
+    position: relative;
+}
+
+.swiper-img {
+    width: 6.25rem;
+    height: 8.34rem;
+    position: relative;
+    z-index: 1;
+}
+
+.tablexqys {
+    position: relative;
+    z-index: 1;
+    width: 6.25rem;
+    height: 8.34rem;
+    margin: 0 auto;
+}
+
+body {
+    height: 100%;
+    position: relative;
+}
+
+.btm-share {
+    width: 6.25rem;
+    font-size: .32rem;
+    border-radius: 0.08rem;
+    color: #777777;
+    text-align: center;
+    font-size: .31rem;
+}
+
+.message-wrapper {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    width: 6.25rem!important;
+    min-height: 1.62rem;
+    color: #ffffff;
+    padding: 0 .25rem;
+    font-size: .28rem;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.message-img {
+    width: 1.07rem;
+    height: 1.07rem;
+}
+
+.btm-img {
+    height: 1.21rem;
+    width: 1.01rem;
+    position: relative;
+    z-index: -1;
+    left: -1.13rem;
+}
+
+.btm-img1 {
+    height: 1.21rem;
+    width: 1.01rem;
+    position: relative;
+    z-index: -1;
+    left: -2.13rem;
+}
+
+.btm-img-con-hover {
+    left: -1rem;
+}
+
+.btm-img-con {
+    border: .02rem solid #e2e2e2;
+    height: 1.49rem;
+    width: 1.25rem;
+    margin-left: .22rem;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.btm-hover-con {
+    height: 1.89rem;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(50, 6, 105, 0.4);
+    -webkit-box-shadow: 0 1px 3px rgba(50, 6, 105, 0.4);
+    z-index: 5;
+}
+
+.message-img-con {
+    height: 1.15rem;
+    width: 1.15rem;
+    background: #ffffff;
+}
+
+.img-hover {
+    border: .02rem solid #864ece;
+    background: url(../img/trian.png) no-repeat right top;
+    background-size: .3rem .3rem;
+}
+
+.message-item {
+    text-align: left;
+    font-size: .28rem;
+    width: 4.5rem;
+    /* padding: .1rem 0; */
+}
+
+#predictImg {
+    width: 6.25rem;
+    height: 8.34rem;
+    top: .7rem;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: absolute;
+    z-index: 100;
+}
+
+.btm-con {
+    height: 2.55rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

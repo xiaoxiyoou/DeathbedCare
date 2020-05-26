@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/adevrtDetail.css" />
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="./js/need/layer.css">
+    <link rel="stylesheet" href="./css/picker.css" />
+    <title>临终关怀</title>
+</head>
+
+<body>
+    <div id="app" v-show="show"  v-cloak>
+        <div class="adevrt-title c-row a-c">
+            <div class="title">广告名称</div>
+            <input class="title-input" v-model="AdName" placeholder="请输入广告名称">
+        </div>
+        <div class="title-img-top c-row a-c">广告图片</div>
+        <div class="adeverimg-con c-row a-c j-c">
+            <img class="titleImg" id="img" :src="img" alt="">
+            <input type="file" ref="file" id="file">
+
+            <label for="file" class="label c-row a-c j-c">
+                <img class="label-img" alt="" src="./img/pen_icon.png">
+                <div id="change">点击修改</div>
+            </label>
+        </div>
+        <div class="bar"></div>
+        <div class="adevrt-link-con c-row a-c">
+
+            <div class="adevrt-link-name">广告外链</div>
+            <input class="adevtrLink" v-model="AdLink" placeholder="请输入广告链接">
+        </div>
+        <div class="company-time-con c-row a-c">
+            <div class="company-time">合作时间</div>
+            <div class="company-inpput-con  c-row a-c j-b">
+                <input class="beginTime" v-on:click="demoClick(StartDate,'StartDate')" v-model="StartDate" type="text" readonly="readonly" placeholder="请输入开始时间">
+                <div>-</div>
+                <input class="endTime" v-on:click="demoClick(EndDate,'EndDate')" v-model="EndDate" type="text" readonly="readonly" placeholder="请输入结束时间">
+
+            </div>
+        </div>
+        <input :value="nowData" id="nowValue">
+        <div class="btm-con" v-if="show" v-cloak>
+            <div class="bar"></div>
+            <!--广告已经上线 -->
+            <div v-if="AdId && State" class="btm-btn-con c-row j-b" v-cloak>
+                <div  class="online-btn c-row a-c j-c" v-on:click="saveOline" v-cloak>保存</div>
+             
+                <div class="preview-btn c-row a-c j-c" v-on:click="deathbedOnload" v-cloak>预览</div>
+            </div>
+            <div  v-if="AdId && State" class="btm-btn-con c-row j-b" v-cloak>
+                <!-- <div v-if="AdId" class="Offline c-row a-c j-c" v-cloak v-on:click="Offline()">{{onlineState}}</div> -->
+                <!-- <div class="Offline c-row a-c j-c" v-cloak v-on:click="Offline()">下线</div>              -->
+               
+                <div class="delete  c-row a-c j-c" v-on:click="deleteAdevrt" v-cloak>删除</div>
+                <div class="share-btn c-row a-c j-c" v-on:click="shareOnLoad" v-cloak>分享</div>
+            </div>
+            <!-- 广告已添加未上线 -->       
+            <div  v-if="AdId && !State" class="online c-row a-c j-c" v-on:click="saveOline" v-cloak>保存</div>        
+            <div  v-if="AdId &&!State" class="btm-btn-con c-row j-b" v-cloak>
+                <div class="preview c-row a-c j-c" v-on:click="deathbedOnload" v-cloak>预览</div>            
+                <div class="delete  c-row a-c j-c" v-on:click="deleteAdevrt" v-cloak>删除</div>
+             
+            </div>
+            <!-- 添加广告按钮 -->
+
+            <div  v-if="!AdId" class="btm-btn-con c-row j-b" v-cloak>
+                <!-- <div v-if="!AdId" class="online c-row a-c j-c" v-on:click="saveNewOline" v-cloak>保存</div> -->
+                <div v-if="!AdId" class="online-btn c-row a-c j-c" v-on:click="saveNewOline" v-cloak>保存</div>
+                <div class="preview-btn c-row a-c j-c" v-on:click="deathbedOnload" v-cloak>预览</div>
+            </div>
+            <!-- <div v-if="!AdId" class="btm-btn-con c-row j-b" v-cloak>
+                <div class="preview c-row a-c j-c" v-on:click="deathbedOnload" v-cloak>预览</div>
+                <div class="share c-row a-c j-c" v-on:click="shareOnLoad" v-cloak>分享</div>
+            </div> -->
+        </div>
+        <!-- 底部文字 -->
+        <div class="btm-word">孝子部落集团技术支持</div>
+    </div>
+</body>
+<script src="js/noScaling.js"></script>
+<script src="js/jquery-1.8.2.js"></script>
+<script src="js/upload.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/url.js"></script>
+<script src="js/adevrtDatail.js"></script>
+<script src="js/dataPickerAddtwo.js"></script>
+<script src="js/datePickertwo.js"></script>
+<script src="./js/layer.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+<script>
+    // 处理fixed被系统键盘弹上去
+    var win_h = $(window).height();
+    window.addEventListener('resize', function() {
+        if ($(window).height() < win_h) {
+            $('.btm-word').hide();
+        } else {
+            $('.btm-word').show();
+        }
+    });
+</script>
+
+</html>

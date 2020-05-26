@@ -1,0 +1,184 @@
+/*底部样式  */
+
+.footer {
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    padding: 0 .3rem;
+    height: 1rem;
+    background-color: #fff;
+    border-top: .01rem solid #f5f5f5;
+    z-index: 999;
+}
+
+.input {
+    width: 60%;
+    background-color: #f5f5f5;
+    color: #888;
+    font-size: .26rem;
+    height: .6rem;
+    border-radius: .6rem;
+    line-height: .6rem;
+    padding-left: .2rem;
+}
+
+.input img {
+    width: .4rem;
+    height: .4rem;
+    margin-right: .1rem;
+}
+
+.colloction_img,
+.share_img {
+    width: .5rem;
+    height: .5rem;
+}
+
+
+/* 评论弹出框 */
+
+.warp {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.textarea_con {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: .1rem;
+    background-color: #ffffff;
+}
+
+.textarea {
+    padding: .2rem .3rem;
+    background-color: #ffffff;
+    font-size: .28rem;
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: PingFang-SC-Medium;
+    height: 3.5rem;
+    outline: none;
+}
+
+.star_con {
+    height: 1rem;
+}
+
+.star {
+    width: .5rem;
+    height: .5rem;
+}
+
+.text {
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+    background-color: #fff;
+}
+
+.star_text {
+    text-align: center;
+    margin-bottom: .2rem;
+}
+
+.btn_bottom {
+    height: 1rem;
+    font-size: .3rem;
+}
+
+.textarea_btn_cancel {
+    border-bottom-left-radius: 0.1rem;
+    width: 50%;
+    background-color: #fff;
+    text-align: center;
+    color: #999;
+    height: 100%;
+}
+
+.textarea_btn_ensure {
+    height: 100%;
+    width: 50%;
+    background-color: #fff;
+    text-align: center;
+    border-bottom-right-radius: 0.1rem;
+    font-size: .3rem;
+}
+
+
+/* 评论内容样式 */
+
+.conment_list {
+    /* padding: .3rem .3rem 2.3rem; */
+    padding: 0 .3rem;
+    display: none;
+}
+
+.conment_item {
+    padding: .25rem 0;
+    border-top: 1px solid #f5f5f5;
+}
+
+.conment_head {
+    width: .7rem;
+    height: .7rem;
+    border-radius: 50%;
+}
+
+.conment_title {
+    font-size: .3rem;
+    font-weight: 700;
+    color: #333;
+    height: .8rem;
+    line-height: .8rem;
+}
+
+.conment_aside_con {
+    width: 100%;
+    margin-left: .2rem;
+}
+
+.conment_name {
+    color: #666666;
+    font-size: .3rem;
+}
+
+.conment_data {
+    color: #888888;
+    font-size: .24rem;
+}
+
+.conment_content {
+    margin-left: .9rem;
+    text-align: justify;
+    margin-top: .2rem;
+    font-size: .24rem;
+}
+
+.no_conment {
+    display: none;
+    color: #888888;
+    font-size: .28rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.conment_star_con {
+    width: 2rem;
+}
+
+.conment_star {
+    width: .3rem;
+    height: .3rem;
+}
+
+.conment_group {
+    padding-bottom: .5rem;
+}

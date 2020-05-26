@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/sharePoster.css" />
+    <script src="js/rem.js"></script>
+    <title>临终关怀</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div id="app">
+        <div class="tablexqys">
+            <div class="message-wrapper c-row j-b a-c">
+                <div class="message-item">
+                    <div class="shopname"></div>
+                    <div class="">观看临终关怀公益讲座</div>
+                    <div class="">领取尽孝治丧惠民补贴金</div>
+                </div>
+                <div class="message-img-con c-row j-c a-c">
+                    <img class="message-img" src="./img/message.png">
+                </div>
+            </div>
+            <img class="swiper-img" src="./img/banner1.jpg" alt="">
+        </div>
+    </div>
+    <img id="predictImg" src="" alt="">
+
+    <div class="btm-con c-col a-c j-b">
+
+        <div class="btm-share">*长按图片即可分享</div>
+        <div class="btm-hover-con c-row a-c">
+
+            <div class="btm-img-con c-col j-c a-c img-hover"></div>
+            <img class="btm-img" src="./img/banner11.jpg">
+            <div class="btm-img-con  btm-img-con-hover c-col j-c a-c"></div>
+            <img class="btm-img1" src="./img/banner21.jpg">
+            <div class="btm-img-con  btm-img-con-hover  c-col j-c a-c" style="left: -2rem;"></div>
+            <img class="btm-img1" src="./img/banner31.jpg" style="left: -3.13rem;">
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="js/noScaling.js"></script>
+<script src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+<script src="js/html2canvas.js"></script>
+<script src="js/url.js"></script>
+<script src="js/getUrlParam.js"></script>
+<script>
+    var ShopName
+    var imgCon = ["./img/banner1.jpg", "./img/banner2.jpg", "./img/banner3.jpg"]
+        // 点击选择模板
+    $('.btm-img-con').click(function() {
+        var index = $(this).index() / 2;
+        console.log(index)
+        $(".swiper-img").attr("src", imgCon[index]);
+        $(".btm-img-con ").removeClass("img-hover");
+        $(this).addClass("img-hover");
+
+        createImg();
+
+
+
+    })
+</script>
+<script>
+    $(function() {
+        var AdId = getUrlParam("AdId");
+        console.log("AdId", AdId)
+        $.ajax({
+            type: 'get',
+            url: httpUrl,
+            data: {
+                action: "deathedadcard",
+                AdId: AdId
+            },
+            success: function(res) {
+                console.log(res);
+                if (res.code == 1) {
+                    ShopName = res.data.data.ShopName;
+                    $(".shopname").html(res.data.data.ShopName);
+                    $(".message-img").attr("src", "data:image/jpeg;base64," + res.data.data.ShopShareQRcodeImg);
+                    createImg();
+                } else if (res.code == 0) {
+
+                } else if (res.code == 2) {
+                    // window.location.href = "http://b.fuyulove.com/4g/login.aspx";
+                    window.location.href = loginUrl;
+                }
+
+            }
+        });
+
+    })
+
+    function createImg() {
+
+        var canvas2 = document.createElement("canvas");
+        var canvas = document.querySelector('#predictImg');
+        var w = parseInt(window.getComputedStyle(canvas).width);
+        var h = parseInt(window.getComputedStyle(canvas).height);
+        const scaleBy = 2;
+        canvas2.width = w * 1;
+        canvas2.height = h * 1;
+        canvas2.style.width = w + "px";
+        canvas2.style.height = h + "px";
+        var context = canvas2.getContext("2d");
+        context.scale(1, 1);
+        html2canvas(document.querySelector('.tablexqys'), { 
+
+            width: $('.tablexqys').width(), //设置canvas尺寸与所截图尺寸相同，防止白边
+            height: $('.tablexqys').height()
+
+        }).then(function(canvas2) {
+            $(".swiper-img").attr("src", "")
+            var dataURL = canvas2.toDataURL("image/png");
+            $("#predictImg").attr("src", dataURL);
+
+        });
+    }
+</script>

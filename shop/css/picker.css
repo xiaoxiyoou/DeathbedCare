@@ -1,0 +1,285 @@
+body {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /*-webkit-touch-callout: none;*/
+}
+
+ul {
+    list-style: none outside none;
+}
+
+.ub {
+    display: -webkit-box !important;
+    display: box !important;
+    position: relative;
+}
+
+.ub-f1 {
+    position: relative;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+
+
+/*select*/
+
+.zx_mask {
+    overflow: hidden;
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9998;
+}
+
+.zx_select {
+    font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*height: 4.4rem;*/
+    height: 0;
+    width: 100%;
+    color: #333;
+    /* background: rgba(209, 213, 216, 0.3); */
+    z-index: 9999;
+    -webkit-transition: 300ms all;
+    transition: 300ms all;
+    background-color: #ffffff;
+}
+
+.zx_select>header {
+    overflow: hidden;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid #d5d5d5;
+}
+
+.zx_select>header>h1 {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.zx_select>header>button {
+    font-size: .3rem;
+    height: 45px;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    background: #ffffff;
+}
+
+.zx_select button.nav_left {
+    float: left;
+    color: #999999;
+}
+
+.zx_select button.nav_right {
+    float: right;
+    color: #07c160;
+}
+
+.zx_select>p {
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px !important;
+}
+
+.zx_select>p>span {
+    display: block;
+}
+
+
+/*列表*/
+
+.zx_select>div {
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    text-align: center;
+}
+
+.zx_select>div>div.ub-f1 {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.zx_select ul {
+    line-height: 40px;
+}
+
+.zx_select ul>li {
+    height: 40px;
+    color: #2A2B2C;
+    padding: 0 10px !important;
+    margin: 0 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/*.zx_select ul > li:first-child {*/
+
+
+/*padding-top: 80px;*/
+
+
+/*}*/
+
+
+/*.zx_select ul > li:last-child {*/
+
+
+/*padding-bottom: 80px;*/
+
+
+/*}*/
+
+.zx_select .sel_middle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    margin-top: -20px;
+    pointer-events: none;
+    border-top: 1px solid rgba(209, 213, 216, 0.3);
+    border-bottom: 1px solid rgba(209, 213, 216, 0.3);
+}
+
+.zx_select .sel_top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    pointer-events: none;
+    background: rgba(209, 213, 216, 0.2);
+}
+
+.zx_select .sel_bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    pointer-events: none;
+    background: rgba(209, 213, 216, 0.2);
+}
+
+body {
+    font-size: 0.3rem;
+}
+
+#nowValue {
+    background: #f2f2f2;
+    font-size: .3rem;
+}
+
+#wrapper-parent {
+    background: #ffffff;
+}
+
+.picker-wrapper {
+    background: #ffffff;
+}
+
+
+/*content*/
+
+
+/* .plugin-list {
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 0.2rem;
+}
+
+.plugin-list>li {
+    width: 100%;
+    margin-bottom: 0.6rem;
+}
+
+.plugin-list>li>h3 {
+    font-size: 0.3rem;
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+}
+
+.plugin-list>li>div.text {
+    background: #f1f1f1;
+    padding: 0.2rem 0 0.2rem 0.3rem;
+    line-height: 0.55rem;
+    border-radius: 0.05rem;
+}
+
+.plugin-list>li>div.text>p {
+    padding: 0.1rem 0;
+}
+
+.plugin-list>li>div.text>a {
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.plugin-list>li>div.text>input {
+    width: 100%;
+    font-size: 0.3rem;
+    border: none;
+    line-height: 0.55rem;
+    background: none;
+    color: red;
+}
+
+.plugin-list>li>p.btn {
+    font-size: 0.3rem;
+    width: 100%;
+    line-height: 0.9rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+    background: #333;
+    color: white;
+    border-radius: 0.1rem;
+}
+
+pre {
+    position: relative;
+    font-size: 0.26rem;
+    width: 100%;
+    padding: 0.2rem;
+    margin: 0 0 0.3rem;
+    background: #f1f1f1;
+    color: #333;
+    border-radius: 0.05rem;
+}
+
+pre:after {
+    font-size: 0.28rem;
+    color: #cccccc;
+    content: 'JS';
+    position: absolute;
+    right: 0.1rem;
+    top: 0.1rem;
+} */

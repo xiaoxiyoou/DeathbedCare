@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="./js/rem.js"></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./js/need/layer.css">
+    <link rel="stylesheet" href="./css/subsidies.css">
+    <title>临终关怀</title>
+</head>
+
+<body>
+    <img class="titleImg" src="./img/index/banner.jpg" alt="" />
+    <div class="banner-dec c-row j-c a-c">当病人在最后的时间里，
+        亲人怎样用正确的方法、在正确的时间、说正确的话、做正确的事、正确地表达爱心、孝心，尽永久的孝行，不留遗憾，最终达到与亲人感同身受，实现心随所愿，让病人和家人都能够更坦然地面对即将到来的生命离别。</div>
+    <!-- 视频部分 -->
+    <div class="videoCon c-col a-c">
+        <img class="video-title" src="./img/index/title.png" alt="">
+        <img class="fake" src="./img/index/fake1.png" alt="">
+        <img class="loadFake" src="./img/index/poster1.jpg" alt="">
+        <div class="fakeCon">
+            <img class="fakeImg" src="./img/index/poster.jpg" alt="">
+            <img class="fakeMask" src="./img/index/fake.png" alt="">
+            <div class="fakebtm c-row j-c">
+                <div class="prevbtn  c-row j-c a-c">再看一遍</div>
+                <div class="nextbtn c-row j-c a-c">观看下一条</div>
+
+            </div>
+        </div>
+        <video class="video" id="video" poster="./img/index/poster.jpg" controls="controls" webkit-playsinline="true"
+            x-webkit-airplay="true" playsinline="true" x5-video-orientation="h5" x5-video-player-fullscreen="true"
+            x5-playsinline="" onplay="videoStart()" onpause="videoPause()" ontimeupdate="myFunction(this)"
+            src="http://edu.fg1413.com/VideoUpload/20190722/jzblzgh-1.mp4">
+            <source id="source" src="http://edu.fg1413.com/VideoUpload/20190722/jzblzgh-1.mp4" type="video/mp4">
+        </video>
+        <div class="viode-dec">
+            <div class="video-btm">孝子必修的五句话</div>
+            <div class="video-text">您知道您的亲人最想听的5句话是什么吗？</div>
+            <div class="video-text"> 亲人最希望您做的3件事是什么？</div>
+        </div>
+        <div class="video-select c-row j-b">
+            <div class="video-select-item-hover  video-select-item">第一集</div>
+            <div class="video-select-item">第二集</div>
+            <div class="video-select-item">第三集</div>
+            <div class="video-select-item">第四集</div>
+            <div class="video-select-item">第五集</div>
+
+        </div>
+    </div>
+    <!-- 二十四孝 -->
+    <div class="loveCon">
+        <a class="loveLink" href="./obedience.html">
+            <img class="love" src="./img/index/loveIndex.jpg" alt="">
+        </a>
+    </div>
+    <!-- 广告 -->
+    <div class="advertiseCon">
+        <a class="adeverLink" href="javascript:void(0)">
+            <img class="advertise" src="" alt="">
+        </a>
+    </div>
+    <!-- 文章列表 -->
+    <div class="articleCon c-col a-c">
+
+    </div>
+    <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU5NTczOTQ2OA==&scene=124#wechat_redirect">
+        <div class="more-con c-row a-c j-c">
+            <div class="more c-row a-c j-c">了解更多</div>
+        </div>
+    </a>
+    <div class="btmLevel"></div>
+    <!-- 观看视频弹出框 -->
+    <div class="videoPop">
+        <div class="mask"></div>
+        <div class="videoBg">
+            <div class="videoTitle">完善信息继续观看</div>
+            <div class="isreceive">
+                <div class="sex-con c-row j-b a-c">
+                    <img class="sexImg" src="./img/index/people.png" alt="">
+                    <input class="sexInput" type="text" placeholder="您贵姓" id="videoName">
+                    <div class="video-sex-select-con c-row j-c a-c" value="1">
+                        <div class="video-sex-select"></div>
+                    </div>
+                    <div class="video-sex-text">先生</div>
+                    <div class="video-sex-select-con  c-row j-c a-c" value="2">
+                        <div class="video-sex-select  sex-select-no"></div>
+                    </div>
+                    <div class="video-sex-text"> 女士</div>
+                </div>
+                <div class="phone-con">
+                    <img class="phoneImg" src="./img/index/phone.png" alt="">
+                    <input class="phoneInput" id="videoNum" type="text" placeholder="请输入手机号" value="">
+                </div>
+                <div class="code-con c-row j-b a-c">
+                    <img class="codeImg" src="./img/index/code.png" alt="">
+                    <input class="codeInput" type="text" placeholder="请输入验证码" id="videoCode">
+                    <div class="video-code-btn">获取验证码</div>
+                </div>
+            </div>
+
+
+            <div class="video-use-btm">继续观看</div>
+            <img class="subsidies-close" src="./img/index/close_icon.png">
+
+        </div>
+
+    </div>
+
+    <!-- 领取补贴金图标 -->
+    <div class="getEnvelopeshow">
+        <div class="getEnvelopesCon c-row j-c a-c">
+            <div class="getEnvelopes c-row a-c j-c">领取尽孝治丧惠民补贴金</div>
+            <img class="hand" src="./img/index/hand.png">
+        </div>
+    </div>
+    <!-- 领取补贴金页面 -->
+    <div class="subsidiespop">
+        <div class="mask"></div>
+        <div class="subsidiesBg">
+            <div class="subsidies-title">
+                领取尽孝治丧惠民补贴金
+            </div>
+            <div class="subsidiesImgCon">
+                <img class="subsidiesImg" src="./img/index/num1.png">
+                <div class="subsidiesNumCon c-row a-c">
+                    <div class="subsidiesNumLeft c-row  a-c">
+                        <span class="numtop">￥</span>
+                        <span class="num"></span>
+
+                    </div>
+                    <div class="subsidiesNumRight c-col j-c  a-c">
+                        <div class="cash">
+                            现金抵扣
+                        </div>
+                        <div class="cashNOum">
+                            已有人领取
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="videoReceive">
+                <div class="sex-con c-row j-b a-c">
+                    <img class="sexImg" src="./img/index/people.png" alt="">
+                    <input class="sexInput" type="text" placeholder="您贵姓" id="userName">
+                    <div class="sex-select-con c-row j-c a-c" value="1">
+                        <div class="sex-select"></div>
+                    </div>
+                    <div class="sex-text">先生</div>
+                    <div class="sex-select-con  c-row j-c a-c" value="2">
+                        <div class="sex-select  sex-select-no"></div>
+                    </div>
+                    <div class="sex-text"> 女士</div>
+                </div>
+                <div class="phone-con">
+                    <img class="phoneImg" src="./img/index/phone.png" alt="">
+                    <input class="phoneInput" id="phoneNum" type="text" placeholder="请输入手机号" value="">
+                </div>
+                <div class="code-con c-row j-b a-c">
+                    <img class="codeImg" src="./img/index/code.png" alt="">
+                    <input class="codeInput" type="text" placeholder="请输入验证码" id="TelCode">
+                    <div class="code-btn">获取验证码</div>
+                </div>
+            </div>
+            <div class="use-btm">
+                <a id="use-btm-href"> 去使用</a>
+            </div>
+            <div class="use-get">领取补贴金</div>
+            <a class="shopMobile" href="18302468380">
+                <div class="shopPhone">
+                    致电商家
+                </div>
+            </a>
+            <img class="subsidiesClose" src="./img/index/close_icon.png">
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script src="js/noScaling.js"></script>
+<script src="js/http.js"></script>
+<script src="js/jquery-1.8.2.js"></script>
+<script src="js/login.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/index.js"></script>
+<script src="js/hiden.js"></script>
+<script src="js/share.js"></script>
+<script src="js/subsidies.js"></script>
+<script src="js/video.js"></script>
+<script src="js/layer.js"></script>
+<script src="js/getvideotime.js"></script>
+
+<script>
+    WeiXinShare("临终关怀公益讲座", "", "img/index/share.jpg", "当您的亲人正在病危时刻，您知道亲人最想听的5句话是什么吗？亲人最需要您做的3件事是什么吗？");
+    // 处理fixed被系统键盘弹上去
+    $(document).ready(function () {
+        var win_h = $(window).height();
+        window.addEventListener('resize', function () {
+            if ($(window).height() < win_h) {
+                $('.getEnvelopeshow').hide();
+
+            } else {
+                $('.getEnvelopeshow').show();
+            }
+        });
+
+    })
+    $(function () {
+        getStr(searchUrl, "!")
+        // Sence()
+        
+        getVideo(videoIndex)
+        if (shopId) {
+            envelopes();
+            shopAdimin();
+        } else {
+            //未检测到商家
+            $(".getEnvelopesCon").css("visibility", "hidden")
+        }
+        advert()
+
+
+    });
+</script>

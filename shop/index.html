@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/guidpage.css" />
+    <link rel="stylesheet" href="./js/need/layer.css" />
+    <script src="js/rem.js"></script>
+    <title>临终关怀</title>
+</head>
+
+
+<body>
+    <div id="app" v-if="state" v-cloak>
+        <div v-if="state" v-cloak class="openCon c-col j-a a-c">
+            <img v-if="state" v-cloak class="openImg" src="./img/not_open.jpg" alt="">
+            <div class="no-get">您尚未获得该功能特权</div>
+            <div>
+                <div v-if="state" v-cloak class="title  c-row j-b">请联系对应地区负责人：</div>
+                <div v-if="state" v-cloak class="openDetail c-row j-b f-wrap ">
+                    <div v-if="state" v-cloak class="item c-col">
+                        <p v-if="state" v-cloak>华东区域陈老师：</p>
+                        <a v-if="state" v-cloak href="tel:15541567913">15541567913</a>
+                    </div>
+                    <div v-if="state" v-cloak class="item c-col">
+                        <p v-if="state" v-cloak>西北区域杨老师：</p>
+                        <a v-if="state" v-cloak href="tel:15541978413">15541978413 </a>
+                    </div>
+                    <div v-if="state" v-cloak class="item c-col">
+                        <p v-if="state" v-cloak>华北区域刘老师：</p>
+                        <a v-if="state" v-cloak href="tel:13166679153">13166679153 </a>
+                    </div>
+                    <div v-if="state" v-cloak class="item c-col">
+                        <p v-if="state" v-cloak>西南区域梁老师：</p>
+                        <a v-if="state" v-cloak href="tel:13166714319">13166714319 </a>
+                    </div>
+                    <div v-if="state" v-cloak class="item c-col">
+                        <p v-if="state" v-cloak>华中区域马老师：</p>
+                        <a v-if="state" v-cloak href="tel:13166734913">13166734913 </a>
+
+                    </div>
+                    <div v-if="state" v-cloak class="item c-col">
+                        <p v-if="state" v-cloak>东北区域王老师：</p>
+                        <a v-if="state" v-cloak href="tel:13166788913">13166788913 </a>
+                    </div>
+                    <div v-if="state" v-cloak class="item c-col">
+                        <p v-if="state" v-cloak>华南区域高老师：</p>
+                        <a v-if="state" v-cloak href="tel:13252867688">13252867688 </a>
+
+                    </div>
+                    <div v-if="state" v-cloak class="item c-col">
+                        <p v-if="state" v-cloak>辽宁区域董老师：</p>
+                        <a v-if="state" v-cloak href="tel:15542268913">15542268913 </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/noScaling.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/jquery-1.8.2.js"></script>
+<script src="js/layer.js"></script>
+<script src="js/url.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            state: 0
+
+
+        },
+        methods: {
+            stateOpen: function() {
+                var that = this
+                axios.get(httpUrl, {
+                    params: {
+                        action: "deathedindex",
+
+                    }
+                })
+
+                .then(function(res) {
+                    console.log("是否开通", res)
+                    var code = res.data.code
+                    console.log("code", code)
+                    if (code == 1) {
+                        // var state = 0
+                        //测试专用
+                        var state = res.data.data.data
+
+                        if (state) {
+                            window.location.href = "./indexDetail.html"
+                        } else {
+                            that.state = 1
+                        }
+                    }
+                    if (code === 2) {
+                        window.location.href = loginUrl
+                    }
+
+                })
+
+
+            },
+
+        },
+        mounted() {
+            this.stateOpen()
+
+
+        }
+    })
+</script>
+
+</html>

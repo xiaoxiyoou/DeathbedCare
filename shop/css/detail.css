@@ -1,0 +1,141 @@
+#app {
+    display: flex;
+    align-items: center;
+    font-family: MicrosoftYaHei;
+    display: flex;
+    flex-direction: column;
+}
+
+.con-wrapper {
+    border-left: 1px solid #d5d5d5;
+    border-top: 1px solid #d5d5d5;
+    border-radius: .08rem;
+    width: 6.9rem;
+    height: 100%;
+    margin-top: .32rem;
+    color: #666666;
+}
+
+.title-wrapper {
+    width: 100%;
+    height: .9rem;
+    background: #f2f2f2;
+    font-size: .28rem;
+    font-weight: 700;
+}
+
+.unit {
+    font-size: .23rem;
+}
+
+.num-wrapper {
+    width: 100%;
+    height: .8rem;
+    font-size: .27rem;
+    font-family: ArialMT;
+}
+
+.num-title,
+.num {
+    width: 1.8rem;
+}
+
+.data-title,
+.data {
+    width: 1.68rem;
+}
+
+.check-title,
+.check {
+    width: 2.02rem;
+}
+
+.check {
+    letter-spacing: 0;
+}
+
+.handle-title,
+.handle {
+    width: 1.39rem;
+}
+
+.num-title,
+.data-title,
+.check-title,
+.handle-title,
+.handle,
+.data,
+.check,
+.num {
+    white-space: nowrap;
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.handle-text {
+    font-size: .26rem;
+    width: 1.04rem;
+    height: 0.56rem;
+    border-radius: 0.08rem;
+    color: #ffffff;
+    background: linear-gradient(#854ccd, #a870ee);
+}
+
+.handle-text-hover {
+    font-size: .26rem;
+    width: 1.04rem;
+    height: 0.56rem;
+    border-radius: 0.08rem;
+    color: #ffffff;
+    background: linear-gradient(#c2a6e6, #d3b7f6);
+}
+
+.switch-wrapper {
+    width: 6.9rem;
+    font-size: .35rem;
+    /* margin-top: .42rem; */
+}
+
+.switch-item {
+    width: 3.3rem;
+    height: .8rem;
+    background: #f2f2f2;
+    border-radius: .08rem;
+}
+
+.switch-img {
+    width: .42rem;
+    height: .42rem;
+    margin-left: .1rem;
+}
+
+.switch-img-left {
+    width: .42rem;
+    height: .42rem;
+    margin-right: .1rem;
+}
+
+.btm-share {
+    font-size: .32rem;
+    color: #ffffff;
+    width: 6.9rem;
+    height: .85rem;
+    background: linear-gradient(#854ccd, #a870ee);
+    border-radius: 0.08rem;
+}
+
+.switch-color {
+    color: #999999;
+}
+
+.btm-con {
+    position: fixed;
+    /* top: 9.2rem; */
+    height: 2.12rem;
+    bottom: .3rem;
+}
+
+.no-text {
+    width: 6.9rem;
+    height: 6rem;
+}
